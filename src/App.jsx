@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import Country from './components/Country'
+import Countries from './components/Countries'
 import DataCountries from './components/DataCountries'
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Country />} />
-
+        <Route path='/' element={<Countries />} />
+        <Route path='/country/:id' element={<DataCountries />} />
       </Routes>
     </Router>
   )

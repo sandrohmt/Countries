@@ -1,0 +1,17 @@
+.card {
+  text-decoration: none;
+}
+
+.countries-name {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.info {
+  font-weight: 300;
+}

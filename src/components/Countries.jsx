@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import './Countries.css'
 import { FaMoon, FaRegMoon, FaSearch } from 'react-icons/fa'
-import DataCountries from './DataCountries'
+
 import Country from './Country'
+import DarkMode from './DarkMode'
+import './Countries.css'
 
 function Countries() {
   const [countries, setCountries] = useState([])
@@ -34,40 +35,37 @@ function Countries() {
       }
 
     })
-    setCountries(infoCountry)
+    setCountries(infoCountry)  
+    console.log(data)
   }
 
-  console.log(countries)
 
 
   useEffect(() => {
     getDataCountries()
   }, [])
+  
+  
 
 
   return (
     <div className='container'>
-      <div className='header'>
-        <h1>Where in the world?</h1>
-        <button> <FaMoon /> dark mode</button>
-        <button><FaRegMoon/> light mode</button>
-      </div>
-
       <div className='search'>
         <FaSearch/>
         <input placeholder='Search for a country' border={'none'} type="search" />
-      </div>
 
-      <select defaultValue={""}>
-        <option disabled  value="">
-          Filter by Region
-        </option>
-      {regions.map((country, index) => (
-        <option key={index} value={country}> 
-        {country}
-         </option>
-      ))}
-    </select>
+
+        <select defaultValue={""}>
+          <option disabled value="">
+            Filter by Region
+          </option>
+        {regions.map((country, index) => (
+          <option key={index} value={country}> 
+          {country}
+          </option>
+        ))}
+      </select>
+    </div>
 
     <div className='main'>
       <ul>

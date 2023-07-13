@@ -1,3 +1,70 @@
+/* PROJECT COLORS */
+
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue: hsl(207, 26%, 17%);
+  --very-dark-blue-text: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.for-light-theme {
+  --background-color: hsl(0, 0%, 98%);
+  --elements-color: hsl(0, 0%, 100%);
+  --text-color: hsl(200, 15%, 8%);
+  --input-color: hsl(0, 0%, 52%);
+}
+
+.for-dark-theme {
+  --background-color: hsl(207, 26%, 17%);
+  --elements-color: hsl(209, 23%, 22%);
+  --text-color: hsl(0, 0%, 100%);
+  --input-color: hsl(0, 0%, 100%);
+}
+
+/* DEFAULT SETTINGS */
+
+* {
+  color: var(--very-dark-blue-text);
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* CONTAINER */
+
+.container {
+  width: 1440px;
+  background: var(--very-light-gray);
+}
+
+/* HEADER */
+
+.header {
+  background: var(--white);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.button {
+  font-weight: 300;
+}
+
+/* SEARCH INPUT */
+
+input::placeholder {
+  color: var(--dark-gray);
+}
+
 input {
+  background: var(--white);
   border: none;
 }
+
+select {
+  background: var(--white);
+}
+
+/* MAIN */

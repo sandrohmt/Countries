@@ -5,7 +5,6 @@ import { FaMoon, FaRegMoon } from 'react-icons/fa'
 import './Header.css'
 
 
-
 function Header() {
 
   const [darkMode, setDarkMode] = useState(false)
@@ -39,5 +38,3 @@ function Header() {
 }
 
 export default Header
-
-// Resolver o problema do theme switcher

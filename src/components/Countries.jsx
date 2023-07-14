@@ -49,10 +49,12 @@ function Countries() {
 
   return (
     <div className='container'>
-      <div className='search'>
-        <FaSearch/>
-        <input placeholder='Search for a country' border={'none'} type="search" />
-
+      <div className='filters'>
+        <div className='search'>
+          <FaSearch className='search-icon'/>
+          <input placeholder='Search for a country' border={'none'} type="search" />
+        </div>
+        
 
         <select defaultValue={""}>
           <option disabled value="">
@@ -67,7 +69,7 @@ function Countries() {
     </div>
 
     <div className='main'>
-      <ul>
+      <ul className='countries'>
       {countries.map((country) => (
           <Country key={country.id} country={country} />
           ))}
@@ -83,4 +85,3 @@ export default Countries
 // componentizar meu projeto 
 // descobrir como vou fazer o border countries
 // estilizar as paginas
-// dark/light mode

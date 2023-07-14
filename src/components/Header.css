@@ -1,13 +1,23 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1.5em 0 1.5em 1.5em;
+
   background: var(--elements-color);
 }
 
 .logo {
+  margin-left: 1.5em;
+
   font-weight: 800;
   font-size: 24px;
 }
 
 .button {
+  cursor: pointer;
+
+  margin-right: 4em;
   font-weight: 300;
   border: none;
   background: var(--elements-color);

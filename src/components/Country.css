@@ -2,6 +2,14 @@
   text-decoration: none;
 }
 
+.country {
+  width: 320px;
+  height: 400px;
+
+  background: var(--elements-color);
+}
+
+
 .countries-name {
   font-weight: 800;
   font-size: 20px;
@@ -14,4 +22,8 @@
 
 .info {
   font-weight: 300;
+}
+
+.text {
+  margin: 1.5em;
 }

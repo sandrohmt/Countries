@@ -2,6 +2,31 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
+
+
+.back {
+  margin: 4em 3em;
+  width: 120px;
+  height: 30px;
+}
+
+.back-icon {
+  margin-right: 0.5em;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.country-img {
+  margin-left: 3em;
+}
+
+.country-info {
+  margin-right: 4em;
+}
+
 .country-name {
   font-size: 30px;
   font-weight: 800;

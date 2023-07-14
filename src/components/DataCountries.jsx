@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom"
 import { FaArrowLeft } from "react-icons/fa"
 import { FaMoon, FaRegMoon, FaSearch } from 'react-icons/fa'
 
-import DarkMode from './DarkMode'
 import './DataCountries.css'
 
 

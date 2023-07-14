@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { FaMoon, FaRegMoon, FaSearch } from 'react-icons/fa'
 
 import Country from './Country'
-import DarkMode from './DarkMode'
 import './Countries.css'
 
 function Countries() {

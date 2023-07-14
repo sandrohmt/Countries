@@ -1,0 +1,14 @@
+.header {
+  background: var(--elements-color);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.button {
+  font-weight: 300;
+  border: none;
+  background: var(--elements-color);
+}

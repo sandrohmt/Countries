@@ -40,47 +40,47 @@ function DataCountries () {
       <div className="country-info">
         <h1 className="country-name">{name}</h1>
           
-          <div>
-              <h1 className="title">Native Name:</h1>
+          <div className="paragraph">
+              <span className="title">Native Name: </span>
               {Object.entries(nativeName).map(([key, value]) => (
                 <span className="info" key={key}>{key} - {value.common} </span>
               ))}
             </div>
 
-            <h1> 
+            <div className="paragraph"> 
               <span className="title">Population:</span> 
               <span className="info"> {population} </span>
-            </h1>
+            </div>
 
-            <h1>
+            <div className="paragraph">
               <span className="title" >Region: </span>
               <span className="info"> {region} </span>
-            </h1>
+            </div>
 
-            <h1>
+            <div className="paragraph">
               <span className="title"> Sub Region: </span>
               <span className="info"> {subRegion} </span>
-            </h1>
+            </div>
 
-            <h1>
+            <div className="paragraph">
               <span className="title"> Capital: </span>
               <span className="info"> {capital} </span>
-            </h1>
+            </div>
 
-            <h1>
-              <span className="title"> Top Level Domain </span>
+            <div className="paragraph">
+              <span className="title"> Top Level Domain: </span>
               <span className="info"> {tld} </span>
-            </h1>
+            </div>
 
-            <div>
-              <h1 className="title">Currencies:</h1>
+            <div className="paragraph">
+              <span className="title">Currencies: </span>
               {Object.entries(currencies).map(([key, value]) => (
                 <span className="info" key={key}>{value.name} ({value.symbol}) </span>
               ))}
             </div>
 
-            <div>
-              <h1 className="title">Languages:</h1>
+            <div className="paragraph">
+              <span className="title">Languages: </span>
               {Object.entries(languages).map(([key, value]) => (
                   <span className="info" key={key}>{value} </span>
                 ))}

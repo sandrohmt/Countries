@@ -42,6 +42,10 @@
   background: var(--elements-color);
 }
 
+.search-icon {
+  cursor: pointer;
+}
+
 input {
   background: var(--elements-color);
 

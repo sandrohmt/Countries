@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { FaMoon, FaRegMoon } from 'react-icons/fa'
+import { FaMoon, FaSun } from 'react-icons/fa'
 
 import './Header.css'
 
@@ -30,7 +30,7 @@ function Header() {
         <h1 className='logo'>Where in the world?</h1>
         {darkMode
         ? <button onClick={toggleTheme} className='button dark-mode'> <FaMoon /> dark mode</button>
-        : <button onClick={toggleTheme}  className='button light-mode'><FaRegMoon /> light mode</button>
+        : <button onClick={toggleTheme}  className='button light-mode'><FaSun /> light mode</button>
         }
       </div>
 

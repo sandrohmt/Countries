@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FaMoon, FaRegMoon, FaSearch } from 'react-icons/fa'
+import { FaSearch } from 'react-icons/fa'
 
 import Country from './Country'
 import './Countries.css'

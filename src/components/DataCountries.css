@@ -2,6 +2,10 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
+.data-countries {
+  height: 100vh;
+}
+
 .back {
   margin: 4em 3em;
   width: 120px;
@@ -14,7 +18,8 @@
 
 .main {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .country-img {

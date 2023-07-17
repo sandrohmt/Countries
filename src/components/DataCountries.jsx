@@ -1,5 +1,6 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom"
+
 import { FaArrowLeft } from "react-icons/fa"
 import { FaMoon, FaRegMoon, FaSearch } from 'react-icons/fa'
 
@@ -23,7 +24,7 @@ function DataCountries () {
 
   
   return (
-    <div className="container">
+    <div className="container data-countries">
 
       <Link to={"/"}>
         <button className="button back">

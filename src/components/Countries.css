@@ -25,7 +25,8 @@
 
 .container {
   background: var(--background-color);
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 /* SEARCH INPUT */
@@ -80,6 +81,6 @@ select {
 .countries {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3em 3em;
-  margin: 3em 0 0 4em;
+  gap: 3em 10em;
+  margin: 3em;
 }

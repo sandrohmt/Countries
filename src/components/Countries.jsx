@@ -9,6 +9,13 @@ function Countries() {
   const [regions, setRegions] = useState([])
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState([])
+  const [currentPage, setCurrentPage] = useState(0)
+  const [itensPerPage, setItensPerPage] = useState(8)
+
+  const pages = Math.ceil(countries.length / itensPerPage)
+  const startIndex = currentPage *  itensPerPage
+  const endIndex = startIndex *  itensPerPage
+  
 
 
   async function getDataCountries() {
@@ -41,15 +48,19 @@ function Countries() {
   }, [])
   
 
-  const filteredCountries = countries.filter((country) => {
+  let filteredCountries = countries.filter((country) => {
     const lowerCaseSearch = search.toLowerCase()
     const lowerCaseName = country.name.toLowerCase()
 
     const matchesFilter = filter === '' || country.region.includes(filter)
     const matchesSearch = lowerCaseName.includes(lowerCaseSearch)
+    
 
     return matchesFilter && matchesSearch
   })
+
+   filteredCountries = filteredCountries.slice(startIndex, endIndex)
+
 
   return (
     <div className='container'>
@@ -85,6 +96,12 @@ function Countries() {
       ? filteredCountries.map((country) => (<Country key={country.id} country={country} />))
       : <span className='no-country'>No country found!</span>}
       </ul>
+    </div>
+
+    <div className="footer">
+        {Array.from(Array(pages), (item, index) => {
+          return <button>{filteredCountries}</button>
+        })}
     </div>
   </div>
   )

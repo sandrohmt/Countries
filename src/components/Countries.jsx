@@ -7,6 +7,8 @@ import './Countries.css'
 function Countries() {
   const [countries, setCountries] = useState([])
   const [regions, setRegions] = useState([])
+  const [search, setSearch] = useState('')
+  const [filter, setFilter] = useState([])
 
 
   async function getDataCountries() {
@@ -15,9 +17,6 @@ function Countries() {
     const regionNames = [...new Set (data.map((item => item.region)))]
     setRegions(regionNames)
     const infoCountry = data.map((country, index) => {
-
-      // const nativeName = country.name.nativeName ? Object.values(country.name.nativeName)[0].common : []
-      // console.log(nativeName)
 
       return {
         id: index,
@@ -30,34 +29,46 @@ function Countries() {
         subRegion: country.subregion,
         tld: country.tld,
         currencies: country.currencies,
-        languages: country.languages
+        languages: country.languages,
       }
 
     })
     setCountries(infoCountry)  
-    console.log(data)
   }
-
-
 
   useEffect(() => {
     getDataCountries()
   }, [])
   
-  
 
+  const filteredCountries = countries.filter((country) => {
+    const lowerCaseSearch = search.toLowerCase()
+    const lowerCaseName = country.name.toLowerCase()
+
+    const matchesFilter = filter === '' || country.region.includes(filter)
+    const matchesSearch = lowerCaseName.includes(lowerCaseSearch)
+
+    return matchesFilter && matchesSearch
+  })
 
   return (
     <div className='container'>
       <div className='filters'>
         <div className='search'>
           <FaSearch className='search-icon'/>
-          <input placeholder='Search for a country' border={'none'} type="search" />
+          <input 
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder='Search for a country' border={'none'} 
+          type="search"
+          value={search} />
         </div>
         
 
-        <select defaultValue={""}>
-          <option disabled value="">
+        <select
+        onChange={(event) => setFilter(event.target.value)}
+        value={filter}
+        defaultValue={""}>
+          <option value="">
             Filter by Region
           </option>
         {regions.map((country, index) => (
@@ -70,18 +81,17 @@ function Countries() {
 
     <div className='main'>
       <ul className='countries'>
-      {countries.map((country) => (
-          <Country key={country.id} country={country} />
-          ))}
+      {filteredCountries.length > 0
+      ? filteredCountries.map((country) => (<Country key={country.id} country={country} />))
+      : <span className='no-country'>No country found!</span>}
       </ul>
     </div>
-
   </div>
   )
 }
 
 export default Countries
 
-// componentizar meu projeto 
+
+// fazer paginação
 // descobrir como vou fazer o border countries
-// estilizar as paginas

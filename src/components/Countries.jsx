@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { FaSearch } from 'react-icons/fa'
 
 import Country from './Country'
+import Pagination from './Pagination'
+
 import './Countries.css'
 
 function Countries() {
@@ -9,14 +11,12 @@ function Countries() {
   const [regions, setRegions] = useState([])
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState([])
-  const [currentPage, setCurrentPage] = useState(0)
   const [itensPerPage, setItensPerPage] = useState(8)
+  const [currentPage, setCurrentPage] = useState(0)
 
   const pages = Math.ceil(countries.length / itensPerPage)
-  const startIndex = currentPage *  itensPerPage
-  const endIndex = startIndex *  itensPerPage
-  
-
+  const startIndex = currentPage * itensPerPage
+  const endIndex = startIndex + itensPerPage
 
   async function getDataCountries() {
     const resp = await fetch('https://restcountries.com/v3.1/all')
@@ -46,6 +46,10 @@ function Countries() {
   useEffect(() => {
     getDataCountries()
   }, [])
+
+  useEffect(() => {
+    setCurrentPage(0)
+  }, [itensPerPage])
   
 
   let filteredCountries = countries.filter((country) => {
@@ -59,11 +63,13 @@ function Countries() {
     return matchesFilter && matchesSearch
   })
 
-   filteredCountries = filteredCountries.slice(startIndex, endIndex)
+  const filteredPagedCountries = filteredCountries.slice(startIndex, endIndex)
+
 
 
   return (
     <div className='container'>
+
       <div className='filters'>
         <div className='search'>
           <FaSearch className='search-icon'/>
@@ -74,7 +80,6 @@ function Countries() {
           value={search} />
         </div>
         
-
         <select
         onChange={(event) => setFilter(event.target.value)}
         value={filter}
@@ -90,19 +95,21 @@ function Countries() {
       </select>
     </div>
 
+    <Pagination pages={pages}
+      itensPerPage={itensPerPage}
+      setItensPerPage={setItensPerPage}
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage} 
+       />
+
     <div className='main'>
       <ul className='countries'>
-      {filteredCountries.length > 0
-      ? filteredCountries.map((country) => (<Country key={country.id} country={country} />))
+      {filteredPagedCountries.length > 0
+      ? filteredPagedCountries.map((country) => (<Country key={country.id} country={country} />))
       : <span className='no-country'>No country found!</span>}
       </ul>
     </div>
 
-    <div className="footer">
-        {Array.from(Array(pages), (item, index) => {
-          return <button>{filteredCountries}</button>
-        })}
-    </div>
   </div>
   )
 }

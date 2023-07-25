@@ -14,7 +14,6 @@ function Countries() {
   const [itensPerPage, setItensPerPage] = useState(8)
   const [currentPage, setCurrentPage] = useState(0)
 
-  const pages = Math.ceil(countries.length / itensPerPage)
   const startIndex = currentPage * itensPerPage
   const endIndex = startIndex + itensPerPage
 
@@ -63,9 +62,9 @@ function Countries() {
     return matchesFilter && matchesSearch
   })
 
+  const pages = Math.ceil(filteredCountries.length / itensPerPage)
   const filteredPagedCountries = filteredCountries.slice(startIndex, endIndex)
-
-
+  
 
   return (
     <div className='container'>

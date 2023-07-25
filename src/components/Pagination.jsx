@@ -3,9 +3,10 @@ import './Pagination.css'
 function Pagination ({pages, itensPerPage, setItensPerPage, currentPage, setCurrentPage}) {
   
   return (
-    <div>
+    <div className='pagination'>
 
       <div>
+        <span className='qtt-pages'>Quantity of items: </span>
         <select value={itensPerPage} onChange={(event) => setItensPerPage(Number(event.target.value))}>
           <option value={8}>8</option>
           <option value={12}>12</option>

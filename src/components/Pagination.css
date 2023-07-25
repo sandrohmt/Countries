@@ -1,9 +1,19 @@
+.pagination {
+  margin-top: 2em;
+  margin-left: 4em;
+}
+
 .page {
   width: 30px;
   height: 30px;
-  margin: 5px;
+  margin-top: 2em;
+  margin-right: 5px;,
 }
 
 .page:hover {
   background: var(--background-color);
+}
+
+.qtt-pages {
+  font-weight: 600;
 }

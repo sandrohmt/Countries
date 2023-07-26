@@ -87,7 +87,19 @@ select {
   font-size: 20px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 1800px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1300px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
   .filters {
     flex-direction: column;
   }

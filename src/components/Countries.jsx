@@ -123,5 +123,4 @@ function Countries() {
 export default Countries
 
 
-// fazer paginação
-// descobrir como vou fazer o border countries
+// encaixar as bandeiras em qualquer tela

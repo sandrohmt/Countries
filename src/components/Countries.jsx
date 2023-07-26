@@ -10,7 +10,7 @@ function Countries() {
   const [countries, setCountries] = useState([])
   const [regions, setRegions] = useState([])
   const [search, setSearch] = useState('')
-  const [filter, setFilter] = useState([])
+  const [filter, setFilter] = useState('')
   const [itensPerPage, setItensPerPage] = useState(8)
   const [currentPage, setCurrentPage] = useState(0)
 
@@ -80,9 +80,9 @@ function Countries() {
         </div>
         
         <select
+        multiple={false}
         onChange={(event) => setFilter(event.target.value)}
-        value={filter}
-        defaultValue={""}>
+        value={filter}>
           <option value="">
             Filter by Region
           </option>
@@ -108,6 +108,13 @@ function Countries() {
       : <span className='no-country'>No country found!</span>}
       </ul>
     </div>
+
+      <Pagination pages={pages}
+      itensPerPage={itensPerPage}
+      setItensPerPage={setItensPerPage}
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage} 
+       />
 
   </div>
   )

@@ -7,7 +7,10 @@ function Pagination ({pages, itensPerPage, setItensPerPage, currentPage, setCurr
 
       <div>
         <span className='qtt-pages'>Quantity of items: </span>
-        <select value={itensPerPage} onChange={(event) => setItensPerPage(Number(event.target.value))}>
+        <select 
+        multiple={false}
+        value={itensPerPage}
+         onChange={(event) => setItensPerPage(Number(event.target.value))}>
           <option value={8}>8</option>
           <option value={12}>12</option>
           <option value={16}>16</option>
@@ -18,6 +21,7 @@ function Pagination ({pages, itensPerPage, setItensPerPage, currentPage, setCurr
       <div>
           {Array.from(Array(pages), (item, index) => {
             return <button 
+            key={index}
             className="button page"
             style={index === currentPage ? {backgroundColor: "gray"} : null}
             value={index}

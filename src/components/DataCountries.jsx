@@ -26,7 +26,7 @@ function DataCountries () {
   return (
     <div className="container data-countries">
 
-      <Link to={"/"}>
+      <Link to={"/countries"}>
         <button className="button back">
         <FaArrowLeft className="back-icon"/> Back 
         </button>

@@ -5,7 +5,7 @@ import './Country.css'
 function Country ({country}) {
 
   return (
-    <Link state={{country}} className="card" to={`country/${country.id}`} >
+    <Link state={{country}} className="card" to={`/countries/country/${country.id}`} >
       <div className="country" key={country.id}>
           <img width={320} height={160}  src={country.flag} alt="" />
           <div className="text">

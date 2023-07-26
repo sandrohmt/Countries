@@ -10,8 +10,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/countries' element={<Countries />} />
-        <Route path='countries/country/:id' element={<DataCountries />} />
+        <Route path='/Countries' element={<Countries />} />
+        <Route path='Countries/country/:id' element={<DataCountries />} />
       </Routes>
     </Router>
   )

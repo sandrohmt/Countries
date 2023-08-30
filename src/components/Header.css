@@ -32,12 +32,18 @@
   margin-right: 4em;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .logo {
     font-size: 14px;
   }
 
   .button {
     font-size: 10px;
+  }
+}
+
+@media (max-width: 415px) {
+  .header {
+    width: 417px;
   }
 }

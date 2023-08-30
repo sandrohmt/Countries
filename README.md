@@ -1,4 +1,4 @@
-# Pokedex
+# Countries
 
 - Este repositório contém um aplicativo desenvolvido por mim que oferece informações detalhadas sobre todos os países do mundo. O aplicativo é uma ferramenta educacional e informativa que permite aos usuários explorar dados interessantes e relevantes sobre diferentes nações.
 

@@ -4,6 +4,7 @@
 
 .data-countries {
   height: 100vh;
+  width: 100vw;
 }
 
 .back {
@@ -48,4 +49,14 @@
 
 .info {
   font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .country-info {
+    margin-top: 2em;
+  }
 }
